@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/ohayoukenchan/sparkle-api-ios'
   s.summary = 'API for sparkle-ios'
   s.source_files = 'SparkleAPI/Classes/**/*.swift'
-  s.dependency 'RxSwift', '~> 5.0.0'
-  s.dependency 'Alamofire', '~> 4.9.1'
+  s.dependency 'RxSwift'
+  s.dependency 'Alamofire'
 end
