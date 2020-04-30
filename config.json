@@ -1,0 +1,9 @@
+{
+  "podSource": "{ :git => \"https://github.com/ohayoukenchan/sparkle-api-ios.git\"}",
+  "projectName": "SparkleAPI",
+  "podHomepage": "https://github.com/ohayoukenchan/sparkle-api-ios",
+  "podSummary": "API for sparkle-ios",
+  "podVersion": "0.0.1",
+  "responseAs": "RxSwift",
+  "library": "alamofire"
+}

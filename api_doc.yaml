@@ -1,0 +1,78 @@
+openapi: 3.0.0
+info:
+  title: Sparkle
+  description: Sparkle API
+  version: 0.0.1
+servers:
+  - url: https://us-central1-sparkle-1c277.cloudfunctions.net
+    description: プロダクション API
+  - url: https://us-central1-sparkle-1c277.cloudfunctions.net
+    description: 開発用
+    variables:
+      host:
+        default: localhost
+      port:
+        default: '10080'
+paths:
+  /addMessage:
+    post:
+      # operationId: openapitutorial.controller.health.call
+      summary: メッセージを送信します。
+      description: サーバーの状態を返します。
+      parameters:
+        - in: query
+          name: text
+          schema:
+            type: string
+          description: The number of items to skip before starting to collect the result set
+      responses:
+        '200':
+          description: サーバーは正常に動作しています
+          # content:
+          #   application/json:
+          #     schema:
+          #       $ref: '#/components/schemas/post_message_response'
+  /getMessages:
+    get:
+      summary: メッセージを取得します
+      description: メッセージの取得
+      # Operationオブジェクト
+      tags:
+        - users
+      parameters: []
+      responses: # レスポンス定義
+        '200': # HTTP status
+          description: A JSON array of User model
+          content:
+            application/json: # レスポンスの形式指定
+              schema: 
+                type: array
+                items:
+                  $ref: '#/components/schemas/User' # 参照するモデル
+                example: # サンプルデータ
+                  - id: 1
+                    name: John Doe
+                  - id: 2
+                    name: Jane Doe
+components:
+  schemas:
+    # post_message_response:
+    #   description: サーバーの状態のレスポンス
+    #   type: object
+    #   properties:
+    #     status:
+    #       type: string
+    #       enum:
+    #         - ok
+    #   required:
+    #     - status
+    User: # モデル名
+      type: object # 型
+      required: # 必須フィールド
+        - id
+      properties:
+        id: # プロパティ名
+          type: integer # 型 
+          format: int64 # フォーマット(int32, int64等)
+        name:
+          type: string
