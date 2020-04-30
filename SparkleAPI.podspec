@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'SparkleAPI'
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '9.0'
   s.osx.deployment_target = '10.11'
   s.tvos.deployment_target = '9.0'
   s.watchos.deployment_target = '3.0'
@@ -11,6 +11,6 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/ohayoukenchan/sparkle-api-ios'
   s.summary = 'API for sparkle-ios'
   s.source_files = 'SparkleAPI/Classes/**/*.swift'
-  s.dependency 'RxSwift'
-  s.dependency 'Alamofire'
+  s.dependency 'RxSwift', '~> 5.0.0'
+  s.dependency 'Alamofire', '~> 4.9.1'
 end
