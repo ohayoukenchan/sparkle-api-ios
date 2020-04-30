@@ -1,10 +1,10 @@
-name: Sparkle
+name: SparkleClient
 targets:
-  Sparkle:
+  SparkleClient:
     type: framework
     platform: iOS
     deploymentTarget: "10.0"
-    sources: [Sparkle]
+    sources: [SparkleClient]
     info:
       path: ./Info.plist
       version: 0.0.1
