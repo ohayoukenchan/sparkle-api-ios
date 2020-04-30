@@ -15,17 +15,15 @@ open class DefaultAPI {
      メッセージを送信します。
      
      - parameter text: (query) The number of items to skip before starting to collect the result set (optional)
-     - parameter apiResponseQueue: The queue on which api response is dispatched.
      - returns: Observable<Void>
      */
-    open class func addMessagePost(text: String? = nil, apiResponseQueue: DispatchQueue = SparkleAPIAPI.apiResponseQueue) -> Observable<Void> {
+    open class func addMessagePost(text: String? = nil) -> Observable<Void> {
         return Observable.create { observer -> Disposable in
-            addMessagePostWithRequestBuilder(text: text).execute(apiResponseQueue) { result -> Void in
-                switch result {
-                case .success:
-                    observer.onNext(())
-                case let .failure(error):
+            addMessagePostWithRequestBuilder(text: text).execute { (response, error) -> Void in
+                if let error = error {
                     observer.onError(error)
+                } else {
+                    observer.onNext(())
                 }
                 observer.onCompleted()
             }
@@ -42,7 +40,7 @@ open class DefaultAPI {
      */
     open class func addMessagePostWithRequestBuilder(text: String? = nil) -> RequestBuilder<Void> {
         let path = "/addMessage"
-        let URLString = SparkleAPIAPI.basePath + path
+        let URLString = SparkleAPI.basePath + path
         let parameters: [String:Any]? = nil
         
         var url = URLComponents(string: URLString)
@@ -50,7 +48,7 @@ open class DefaultAPI {
             "text": text?.encodeToJSON()
         ])
 
-        let requestBuilder: RequestBuilder<Void>.Type = SparkleAPIAPI.requestBuilderFactory.getNonDecodableBuilder()
+        let requestBuilder: RequestBuilder<Void>.Type = SparkleAPI.requestBuilderFactory.getNonDecodableBuilder()
 
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }

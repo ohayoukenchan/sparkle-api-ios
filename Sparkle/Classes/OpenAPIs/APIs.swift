@@ -6,7 +6,7 @@
 
 import Foundation
 
-open class SparkleAPIAPI {
+open class SparkleAPI {
     public static var basePath = "https://us-central1-sparkle-1c277.cloudfunctions.net"
     public static var credential: URLCredential?
     public static var customHeaders: [String:String] = [:]
@@ -32,7 +32,7 @@ open class RequestBuilder<T> {
         self.isBody = isBody
         self.headers = headers
 
-        addHeaders(SparkleAPIAPI.customHeaders)
+        addHeaders(SparkleAPI.customHeaders)
     }
 
     open func addHeaders(_ aHeaders:[String:String]) {
@@ -41,7 +41,7 @@ open class RequestBuilder<T> {
         }
     }
 
-    open func execute(_ apiResponseQueue: DispatchQueue = SparkleAPIAPI.apiResponseQueue, _ completion: @escaping (_ result: Result<Response<T>, Error>) -> Void) { }
+    open func execute(_ completion: @escaping (_ response: Response<T>?, _ error: Error?) -> Void) { }
 
     public func addHeader(name: String, value: String) -> Self {
         if !value.isEmpty {
@@ -51,7 +51,7 @@ open class RequestBuilder<T> {
     }
 
     open func addCredential() -> Self {
-        self.credential = SparkleAPIAPI.credential
+        self.credential = SparkleAPI.credential
         return self
     }
 }
