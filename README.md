@@ -27,7 +27,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *DefaultAPI* | [**addBooksPost**](docs/DefaultAPI.md#addbookspost) | **POST** /addBooks | 書籍データを追加して追加した書籍を返します
 *DefaultAPI* | [**addMessagePost**](docs/DefaultAPI.md#addmessagepost) | **POST** /addMessage | メッセージを送信します。
-*DefaultAPI* | [**getMessagesGet**](docs/DefaultAPI.md#getmessagesget) | **GET** /getMessages | メッセージを取得します
+*UsersAPI* | [**getMessagesGet**](docs/UsersAPI.md#getmessagesget) | **GET** /getMessages | メッセージを取得します
 
 
 ## Documentation For Models

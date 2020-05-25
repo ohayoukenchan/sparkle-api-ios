@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 # **getMessagesGet**
 ```swift
-    open class func getMessagesGet() -> Observable<[User]>
+    open class func getMessagesGet() -> Observable<[Any]>
 ```
 
 メッセージを取得します
@@ -30,7 +30,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**[User]**](User.md)
+**[Any]**
 
 ### Authorization
 

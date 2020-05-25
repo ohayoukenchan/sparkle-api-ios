@@ -94,43 +94,4 @@ open class DefaultAPI {
         return requestBuilder.init(method: "POST", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }
 
-    /**
-     メッセージを取得します
-     
-     - parameter apiResponseQueue: The queue on which api response is dispatched.
-     - returns: Observable<[Any]>
-     */
-    open class func getMessagesGet(apiResponseQueue: DispatchQueue = SparkleClientAPI.apiResponseQueue) -> Observable<[Any]> {
-        return Observable.create { observer -> Disposable in
-            getMessagesGetWithRequestBuilder().execute(apiResponseQueue) { result -> Void in
-                switch result {
-                case let .success(response):
-                    observer.onNext(response.body!)
-                case let .failure(error):
-                    observer.onError(error)
-                }
-                observer.onCompleted()
-            }
-            return Disposables.create()
-        }
-    }
-
-    /**
-     メッセージを取得します
-     - GET /getMessages
-     - メッセージの取得
-     - returns: RequestBuilder<[Any]> 
-     */
-    open class func getMessagesGetWithRequestBuilder() -> RequestBuilder<[Any]> {
-        let path = "/getMessages"
-        let URLString = SparkleClientAPI.basePath + path
-        let parameters: [String:Any]? = nil
-        
-        let url = URLComponents(string: URLString)
-
-        let requestBuilder: RequestBuilder<[Any]>.Type = SparkleClientAPI.requestBuilderFactory.getBuilder()
-
-        return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
-    }
-
 }

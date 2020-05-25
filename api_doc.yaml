@@ -51,8 +51,8 @@ paths:
       summary: メッセージを取得します
       description: メッセージの取得
       # Operationオブジェクト
-      #tags:
-      #  - users
+      tags:
+        - users
       parameters: []
       responses: # レスポンス定義
         '200': # HTTP status
