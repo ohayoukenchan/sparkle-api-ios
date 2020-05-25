@@ -25,7 +25,8 @@ All URIs are relative to *https://us-central1-sparkle-1c277.cloudfunctions.net*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DefaultAPI* | [**addBooksPost**](docs/DefaultAPI.md#addbookspost) | **POST** /addBooks | 書籍データを追加して追加した書籍を返します
+*BooksAPI* | [**addBooksPost**](docs/BooksAPI.md#addbookspost) | **POST** /addBooks | 書籍データを追加して追加した書籍を返します
+*BooksAPI* | [**getBooksGet**](docs/BooksAPI.md#getbooksget) | **GET** /getBooks | 書籍データを返します
 *DefaultAPI* | [**addMessagePost**](docs/DefaultAPI.md#addmessagepost) | **POST** /addMessage | メッセージを送信します。
 *UsersAPI* | [**getMessagesGet**](docs/UsersAPI.md#getmessagesget) | **GET** /getMessages | メッセージを取得します
 
