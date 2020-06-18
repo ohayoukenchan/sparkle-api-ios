@@ -12,14 +12,14 @@ import RxSwift
 
 open class UsersAPI {
     /**
-     メッセージを取得します
+     ユーザーを取得します（仮）
      
      - parameter apiResponseQueue: The queue on which api response is dispatched.
-     - returns: Observable<[Any]>
+     - returns: Observable<User>
      */
-    open class func getMessagesGet(apiResponseQueue: DispatchQueue = SparkleClientAPI.apiResponseQueue) -> Observable<[Any]> {
+    open class func getUserGet(apiResponseQueue: DispatchQueue = SparkleClientAPI.apiResponseQueue) -> Observable<User> {
         return Observable.create { observer -> Disposable in
-            getMessagesGetWithRequestBuilder().execute(apiResponseQueue) { result -> Void in
+            getUserGetWithRequestBuilder().execute(apiResponseQueue) { result -> Void in
                 switch result {
                 case let .success(response):
                     observer.onNext(response.body!)
@@ -33,19 +33,19 @@ open class UsersAPI {
     }
 
     /**
-     メッセージを取得します
-     - GET /getMessages
-     - メッセージの取得
-     - returns: RequestBuilder<[Any]> 
+     ユーザーを取得します（仮）
+     - GET /getUser
+     - ユーザーの取得
+     - returns: RequestBuilder<User> 
      */
-    open class func getMessagesGetWithRequestBuilder() -> RequestBuilder<[Any]> {
-        let path = "/getMessages"
+    open class func getUserGetWithRequestBuilder() -> RequestBuilder<User> {
+        let path = "/getUser"
         let URLString = SparkleClientAPI.basePath + path
         let parameters: [String:Any]? = nil
         
         let url = URLComponents(string: URLString)
 
-        let requestBuilder: RequestBuilder<[Any]>.Type = SparkleClientAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<User>.Type = SparkleClientAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "GET", URLString: (url?.string ?? URLString), parameters: parameters, isBody: false)
     }

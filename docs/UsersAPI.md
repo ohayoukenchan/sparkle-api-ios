@@ -4,17 +4,17 @@ All URIs are relative to *https://us-central1-sparkle-1c277.cloudfunctions.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getMessagesGet**](UsersAPI.md#getmessagesget) | **GET** /getMessages | メッセージを取得します
+[**getUserGet**](UsersAPI.md#getuserget) | **GET** /getUser | ユーザーを取得します（仮）
 
 
-# **getMessagesGet**
+# **getUserGet**
 ```swift
-    open class func getMessagesGet() -> Observable<[Any]>
+    open class func getUserGet() -> Observable<User>
 ```
 
-メッセージを取得します
+ユーザーを取得します（仮）
 
-メッセージの取得
+ユーザーの取得
 
 ### Example 
 ```swift
@@ -30,7 +30,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**[Any]**
+[**User**](User.md)
 
 ### Authorization
 

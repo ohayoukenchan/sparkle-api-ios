@@ -7,16 +7,18 @@
 
 import Foundation
 
-
+/** ユーザーモデル */
 public struct User: Codable { 
 
 
-    public var id: Int64
+    public var id: Int64?
     public var name: String?
+    public var avatarUrl: String?
 
-    public init(id: Int64, name: String?) {
+    public init(id: Int64?, name: String?, avatarUrl: String?) {
         self.id = id
         self.name = name
+        self.avatarUrl = avatarUrl
     }
 
 }

@@ -28,13 +28,14 @@ Class | Method | HTTP request | Description
 *BooksAPI* | [**addBooksPost**](docs/BooksAPI.md#addbookspost) | **POST** /addBooks | 書籍データを追加して追加した書籍を返します
 *BooksAPI* | [**getBooksGet**](docs/BooksAPI.md#getbooksget) | **GET** /getBooks | 書籍データを返します
 *DefaultAPI* | [**addMessagePost**](docs/DefaultAPI.md#addmessagepost) | **POST** /addMessage | メッセージを送信します。
-*UsersAPI* | [**getMessagesGet**](docs/UsersAPI.md#getmessagesget) | **GET** /getMessages | メッセージを取得します
+*UsersAPI* | [**getUserGet**](docs/UsersAPI.md#getuserget) | **GET** /getUser | ユーザーを取得します（仮）
 
 
 ## Documentation For Models
 
  - [Book](docs/Book.md)
  - [PostMessageResponse](docs/PostMessageResponse.md)
+ - [User](docs/User.md)
 
 
 ## Documentation For Authorization

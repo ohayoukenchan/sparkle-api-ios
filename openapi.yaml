@@ -62,17 +62,17 @@ paths:
           #   application/json:
           #     schema:
           #       $ref: '#/components/schemas/post_message_response'
-  /getMessages:
+  /getUser:
     get:
-      summary: メッセージを取得します
-      description: メッセージの取得
+      summary: ユーザーを取得します（仮）
+      description: ユーザーの取得
       # Operationオブジェクト
       tags:
         - users
       parameters: []
       responses: # レスポンス定義
         '200': # HTTP status
-          description: A JSON array of User model
+          description: A JSON object of User model
           content:
             application/json: # レスポンスの形式指定
               schema: 
@@ -128,17 +128,18 @@ components:
       #     $ref: "#/components/schemas/Book"
     User:
       description: ユーザーモデル
-      type: array
-      items:
-        type: "object"
-        properties:
-          id:
-            type: "integer"
-            format: "int64"
-            example: 1
-          name:
-            type: "string"
-            example: "doggie"
+      type: "object"
+      properties:
+        id:
+          type: "integer"
+          format: "int64"
+          example: 1
+        name:
+          type: "string"
+          example: "doggie"
+        avatarUrl:
+          type: "string"
+          example: "http://example.com/foo.jpg"
   
             
 
