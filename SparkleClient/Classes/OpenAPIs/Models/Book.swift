@@ -11,12 +11,12 @@ import Foundation
 public struct Book: Codable { 
 
 
-    public var isbn: String
+    public var isbn: Double
     public var title: String?
     public var publisher: String?
     public var price: String?
 
-    public init(isbn: String, title: String?, publisher: String?, price: String?) {
+    public init(isbn: Double, title: String?, publisher: String?, price: String?) {
         self.isbn = isbn
         self.title = title
         self.publisher = publisher

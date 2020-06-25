@@ -104,8 +104,8 @@ components:
         - isbn
       properties:
         isbn:
-          type: string
-          example: "9784788510142"
+          type: number
+          example: 9784788510142
         title:
           type: string
           example: "スケートボーディング、空間、都市―身体と建築 (日本語) 単行本"

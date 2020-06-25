@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**isbn** | **String** |  | 
+**isbn** | **Double** |  | 
 **title** | **String** |  | [optional] 
 **publisher** | **String** |  | [optional] 
 **price** | **String** |  | [optional] 
