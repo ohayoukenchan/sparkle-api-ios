@@ -42,6 +42,19 @@ paths:
             application/json:
               schema:
                $ref: '#/components/schemas/Books'
+  /getPhrases:
+    get:
+      summary: Phraseの一覧を返します
+      description: phraseの一覧
+      tags:
+        - phrases
+      responses:
+        '200':
+          description: サーバーは正常に動作しています
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Phrases'
       
   /addMessage:
     post:
@@ -120,12 +133,44 @@ components:
       type: array
       items:
         $ref: "#/components/schemas/Book"
-      # - $ref: "#/components/schemas/Book"
-      # type: array
-      # items:
-      #   type: "object"
-      #   properties:
-      #     $ref: "#/components/schemas/Book"
+    UserInPhrases:
+      description: Phraseが参照しているユーザーデータ
+      type: object
+      properties:
+        name: 
+          type: string
+          example: "takano"
+        avatarUrl: 
+          type: string
+          example: "https://firebasestorage.googleapis.com/v0/b/sparkle-1c277.appspot.com/o/10736733.jpeg?alt=media&token=2aa03fc7-a996-4a07-ac1c-692fa0bec770"
+        id: 
+          type: number
+          example: 1
+    Phrase:
+      description: フレーズモデル
+      type: object
+      required: 
+        - bookId
+      properties:
+        createdAt: 
+          type: string
+          example: "2020-05-19T15:00:00.000Z"
+        phrase: 
+          type: string
+          example: "反骨心が俺の恩人であり相棒さ"
+        bookId: 
+          type: number
+          example: 9784046041371
+        userID:
+          $ref: "#/components/schemas/UserInPhrases"
+        updatedAt: 
+          type: string
+          example: "2020-05-19T15:00:00.000Z"
+    Phrases:
+      description: フレーズ一覧
+      type: array
+      items:
+        $ref: "#/components/schemas/Phrase"
     User:
       description: ユーザーモデル
       type: "object"
@@ -140,7 +185,3 @@ components:
         avatarUrl:
           type: "string"
           example: "http://example.com/foo.jpg"
-  
-            
-
-        
