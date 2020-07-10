@@ -159,7 +159,7 @@ components:
           type: string
           example: "反骨心が俺の恩人であり相棒さ"
         bookId: 
-          type: number
+          type: integer
           example: 9784046041371
         userID:
           $ref: "#/components/schemas/UserInPhrases"

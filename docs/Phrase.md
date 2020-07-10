@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **createdAt** | **String** |  | [optional] 
 **phrase** | **String** |  | [optional] 
-**bookId** | **Double** |  | 
+**bookId** | **Int** |  | 
 **userID** | [**UserInPhrases**](UserInPhrases.md) |  | [optional] 
 **updatedAt** | **String** |  | [optional] 
 
